@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head th:replace="layout/plantilla :: head">
+        <title>Datos de la Nave</title>
+    
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+<div th:replace="layout/plantilla :: body"></div>
+       
+        
+        <br/>
+        <section class="container col-md-4 mx-auto p-4" id="Form"> 
+             <h2 class="justify-content-around">Datos de la Nave</h2>
+            <div class="card">
+              <div class="card-header">
+                                <h4>New spacecraft</h4>
+                            </div>
+              <div class="card-body justify-content-center">              
+          <form class="row-cols-md-3" th:action="@{/save2}" method="post" th:object="${spacecraft}">
+               <div class="form-group">
+            <input type="hidden" name="idPersona" th:field="*{id}"/>
+            <br/>
+            <label for="nombre">Name:</label>
+            <input type="text" name="nombre" th:field="*{name}"/>
+            <br/>
+        
+            <br/>
+            <label>Tipo: </label>
+            <br/>
+                   <div class="form-group column-gap-md-5">
+                       <div class="custom-control custom-radio custom-control-inline" th:each="nave : ${naveT}" >
+                           <input type="radio" class="custom-control-input" id="pathogens1" th:field="*{typeS}" th:value="${nave}" >
+                           <label class="custom-control-label" for="pathogens1"  th:text="${nave}">  </label>
+                       </div>
+
+                   </div>
+        </div>
+            <input type="submit" name="guardar" value="Enviar" class="btn btn-primary btn-block m-4"/> 
+            </div>
+        </form>
+        </div>
+        </section>
+
+
+        
+        <footer class="p-3" th:replace="layout/plantilla :: footer"></footer>
+        
+    </body>
+</html>

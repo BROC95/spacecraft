@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"   xmlns="http://www.w3.org/1999/xhtml">
+
+    <head th:replace="layout/plantilla :: head"></head>
+    <!-- <head th:replace="layout/plantila :: head"></head> -->
+    <style>
+                 #footer {
+    position:fixed; 
+   left:0px;
+   bottom:0px;
+   /* height:30px; */
+    width:100%;
+   background:#999;  
+
+ }
+    </style>
+    <header th:replace="layout/plantilla :: header"></header>
+    <body th:replace="layout/plantilla :: body" class="justify-content-between ">
+          <a th:href="@{/add2}">Newspace2</a>
+    </body>  
+
+ 
+<footer th:replace="layout/plantilla :: footer" class="justify-content-around footer"></footer>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>     -->
+
+    </html>

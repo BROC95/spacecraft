@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantilla :: head">
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+           <!-- CSS only -->
+    </head>
+
+    <header th:replace="layout/plantilla :: header"></header>
+    <div th:replace="layout/plantilla :: body">
+        
+    </div>
+    <body>
+        <div class="card"> <h1 class="card-header text-center">Naves espaciales</h1>
+
+          <div th:if="${naves != null }" class=" container">
+            <table border="2" class="table table-hover card-body">
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Clase</th>
+             
+                </tr>
+                <tr th:each="nave : ${naves}">
+                    <td th:text="${nave.id}">Mostrar Nombre</td>
+                    <td th:text="${nave.name}">Mostrar Nombre</td>
+                    <td th:text="${nave.typeS}">Mostrar Nombre</td>
+            
+                 </tr>
+            </table>
+        </div>
+        <div th:if="${naves == null }">
+            La lista de personas está vacía
+        </div> 
+        </div>
+        
+    </body>
+
+    <footer th:replace="layout/plantilla :: footer"> </footer>
+</html>
